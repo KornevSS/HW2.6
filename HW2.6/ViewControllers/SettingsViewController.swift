@@ -9,7 +9,8 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
+    
+// MARK: - IB Outlets
     @IBOutlet var redSlider: UISlider!
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
@@ -22,18 +23,20 @@ class SettingsViewController: UIViewController {
     @IBOutlet var greenTextField: UITextField!
     @IBOutlet var blueTextField: UITextField!
     
-    
     @IBOutlet var colorPanelView: UIView!
     
+// MARK: - Public properties
     var color: UIColor!
     var delegate: SettingsViewControllerDelegate!
     
+// MARK: - Private properties
     private var colorComponents: (red: Float, green: Float, blue: Float) {
         (red: Float(color.cgColor.components?[0] ?? 1),
          green: Float(color.cgColor.components?[1] ?? 1),
          blue: Float(color.cgColor.components?[2] ?? 1))
     }
     
+// MARK: - Override methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,6 +52,24 @@ class SettingsViewController: UIViewController {
         updateLabels()
     }
     
+// MARK: - IB Actions
+    @IBAction func sliderAction(_ sender: UISlider) {
+        switch sender.tag {
+            case 0: updateFor(slider: sender, label: redLabel, textField: redTextField)
+            case 1: updateFor(slider: sender, label: greenLabel, textField: greenTextField)
+            case 2: updateFor(slider: sender, label: blueLabel, textField: blueTextField)
+            default: break
+        }
+        updateColor()
+        updateColorPanelView()
+    }
+    
+    @IBAction func doneButtonAction() {
+        delegate.setNewValue(for: color)
+        dismiss(animated: true)
+    }
+    
+// MARK: - Private methods
     private func updateColor() {
         color = UIColor(
             red: CGFloat(redSlider.value),
@@ -89,24 +110,10 @@ class SettingsViewController: UIViewController {
         blueLabel.text = String(colorComponents.blue)
     }
     
-    @IBAction func sliderAction(_ sender: UISlider) {
-        switch sender.tag {
-            case 0: updateFor(slider: sender, label: redLabel, textField: redTextField)
-            case 1: updateFor(slider: sender, label: greenLabel, textField: greenTextField)
-            case 2: updateFor(slider: sender, label: blueLabel, textField: blueTextField)
-            default: break
-        }
-        updateColor()
-        updateColorPanelView()
-    }
     
-    @IBAction func doneButtonAction() {
-        delegate.setNewValue(for: color)
-        dismiss(animated: true)
-    }
-
 }
 
+// MARK: - Extentions
 extension SettingsViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let newValue = textField.text else { return }
@@ -118,22 +125,22 @@ extension SettingsViewController: UITextFieldDelegate {
                 numberValueCGFloat = 1.0
             }
             switch textField.tag {
-                case 0: color = UIColor(
-                    red: numberValueCGFloat,
-                    green: CGFloat(greenSlider.value),
-                    blue: CGFloat(blueSlider.value),
-                    alpha: 1)
-                case 1: color = UIColor(
-                    red: CGFloat(redSlider.value),
-                    green: numberValueCGFloat,
-                    blue: CGFloat(blueSlider.value),
-                    alpha: 1)
-                case 2: color = UIColor(
-                    red: CGFloat(redSlider.value),
-                    green: CGFloat(greenSlider.value),
-                    blue: numberValueCGFloat,
-                    alpha: 1)
-                default: break
+            case 0: color = UIColor(
+                red: numberValueCGFloat,
+                green: CGFloat(greenSlider.value),
+                blue: CGFloat(blueSlider.value),
+                alpha: 1)
+            case 1: color = UIColor(
+                red: CGFloat(redSlider.value),
+                green: numberValueCGFloat,
+                blue: CGFloat(blueSlider.value),
+                alpha: 1)
+            case 2: color = UIColor(
+                red: CGFloat(redSlider.value),
+                green: CGFloat(greenSlider.value),
+                blue: numberValueCGFloat,
+                alpha: 1)
+            default: break
             }
         } else {
             showAlert(title: "🚫 It's not a values!", message: "Please, enter value in range 0.0 ... 1.0")
@@ -147,7 +154,6 @@ extension SettingsViewController: UITextFieldDelegate {
     }
 }
 
-// MARK: - Alert controller
 extension SettingsViewController {
     private func showAlert(title: String?, message: String?, textField: UITextField? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

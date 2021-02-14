@@ -14,16 +14,19 @@ protocol SettingsViewControllerDelegate {
 
 class ColorViewController: UIViewController {
 
+// MARK: - IB Outlets
     @IBOutlet var colorView: UIView!
+
+// MARK: - Private properties
     private var color = UIColor(red: 0.7, green: 0.5, blue: 0.3, alpha: 1)
-    
+  
+// MARK: - Override methods
     override func viewDidLoad() {
         super.viewDidLoad()
         colorView.backgroundColor = color
     }
     
-    // MARK: - Navigation
-
+// MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let navigationVC = segue.destination as? UINavigationController else { return }
         guard let settingsVC = navigationVC.topViewController as? SettingsViewController else { return }
@@ -34,6 +37,7 @@ class ColorViewController: UIViewController {
 
 }
 
+// MARK: - Extentions
 extension ColorViewController: SettingsViewControllerDelegate {
     func setNewValue(for color: UIColor) {
         colorView.backgroundColor = color
