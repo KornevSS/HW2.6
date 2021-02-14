@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C04313025D90F1A00F42702 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C04312F25D90F1A00F42702 /* ColorViewController.swift */; };
 		7CB4601225C5509A000F0871 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB4601125C5509A000F0871 /* AppDelegate.swift */; };
 		7CB4601425C5509A000F0871 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB4601325C5509A000F0871 /* SceneDelegate.swift */; };
-		7CB4601625C5509A000F0871 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB4601525C5509A000F0871 /* ViewController.swift */; };
+		7CB4601625C5509A000F0871 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB4601525C5509A000F0871 /* SettingsViewController.swift */; };
 		7CB4601925C5509B000F0871 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CB4601725C5509B000F0871 /* Main.storyboard */; };
 		7CB4601B25C5509C000F0871 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CB4601A25C5509C000F0871 /* Assets.xcassets */; };
 		7CB4601E25C5509C000F0871 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CB4601C25C5509C000F0871 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C04312F25D90F1A00F42702 /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		7CB4600E25C5509A000F0871 /* HW2.6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW2.6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CB4601125C5509A000F0871 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CB4601325C5509A000F0871 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7CB4601525C5509A000F0871 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7CB4601525C5509A000F0871 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7CB4601825C5509B000F0871 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7CB4601A25C5509C000F0871 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CB4601D25C5509C000F0871 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +39,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C04313B25D922EA00F42702 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7C04312F25D90F1A00F42702 /* ColorViewController.swift */,
+				7CB4601525C5509A000F0871 /* SettingsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7C04313C25D9230100F42702 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				7CB4601725C5509B000F0871 /* Main.storyboard */,
+				7CB4601C25C5509C000F0871 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		7C04313D25D9231F00F42702 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				7CB4601F25C5509C000F0871 /* Info.plist */,
+				7CB4601125C5509A000F0871 /* AppDelegate.swift */,
+				7CB4601325C5509A000F0871 /* SceneDelegate.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		7C04313F25D9232B00F42702 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7CB4601A25C5509C000F0871 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		7CB4600525C5509A000F0871 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +94,10 @@
 		7CB4601025C5509A000F0871 /* HW2.6 */ = {
 			isa = PBXGroup;
 			children = (
-				7CB4601125C5509A000F0871 /* AppDelegate.swift */,
-				7CB4601325C5509A000F0871 /* SceneDelegate.swift */,
-				7CB4601525C5509A000F0871 /* ViewController.swift */,
-				7CB4601725C5509B000F0871 /* Main.storyboard */,
-				7CB4601A25C5509C000F0871 /* Assets.xcassets */,
-				7CB4601C25C5509C000F0871 /* LaunchScreen.storyboard */,
-				7CB4601F25C5509C000F0871 /* Info.plist */,
+				7C04313B25D922EA00F42702 /* ViewControllers */,
+				7C04313C25D9230100F42702 /* StoryBoards */,
+				7C04313D25D9231F00F42702 /* SupportingFiles */,
+				7C04313F25D9232B00F42702 /* Resources */,
 			);
 			path = HW2.6;
 			sourceTree = "<group>";
@@ -94,7 +129,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1170;
-				LastUpgradeCheck = 1170;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "Sergey Kornev";
 				TargetAttributes = {
 					7CB4600D25C5509A000F0871 = {
@@ -138,8 +173,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CB4601625C5509A000F0871 /* ViewController.swift in Sources */,
+				7CB4601625C5509A000F0871 /* SettingsViewController.swift in Sources */,
 				7CB4601225C5509A000F0871 /* AppDelegate.swift in Sources */,
+				7C04313025D90F1A00F42702 /* ColorViewController.swift in Sources */,
 				7CB4601425C5509A000F0871 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,6 +228,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -216,6 +253,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = /HW2.6/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -252,6 +290,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -270,6 +309,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = /HW2.6/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -286,7 +326,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PQYEDNAEEG;
-				INFOPLIST_FILE = "$(SRCROOT)/HW2.6/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/HW2.6/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +344,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PQYEDNAEEG;
-				INFOPLIST_FILE = "$(SRCROOT)/HW2.6/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/HW2.6/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
