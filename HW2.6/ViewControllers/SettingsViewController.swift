@@ -72,9 +72,9 @@ class SettingsViewController: UIViewController {
 // MARK: - Private methods
     private func updateColor() {
         color = UIColor(
-            red: CGFloat(redSlider.value),
-            green: CGFloat(greenSlider.value),
-            blue: CGFloat(blueSlider.value),
+            red: CGFloat(round100(value: redSlider.value)),
+            green: CGFloat(round100(value: greenSlider.value)),
+            blue: CGFloat(round100(value: blueSlider.value)),
             alpha: 1
         )
     }
