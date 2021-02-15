@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SettingsViewController" customModule="HW2_6" customModuleProvider="target" sceneMemberID="viewController">
@@ -157,7 +157,7 @@
                             <constraint firstItem="M7s-xd-yD7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="oDC-ao-oe7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="iGe-lO-Krk"/>
+                    <navigationItem key="navigationItem" title="Settings" id="iGe-lO-Krk"/>
                     <connections>
                         <outlet property="blueLabel" destination="PR6-Bd-PRz" id="Plv-XF-bey"/>
                         <outlet property="blueSlider" destination="xpe-Ij-JTY" id="Spb-vi-qUi"/>
